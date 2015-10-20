@@ -39,6 +39,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tbxTarget = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbxDepth = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbxSet
@@ -81,7 +83,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(233, 291);
+            this.button1.Location = new System.Drawing.Point(226, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 27;
@@ -147,11 +149,34 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "输出符号库";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(45, 270);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 15);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "图片位数";
+            // 
+            // cbxDepth
+            // 
+            this.cbxDepth.FormattingEnabled = true;
+            this.cbxDepth.Items.AddRange(new object[] {
+            "8bit",
+            "32bit"});
+            this.cbxDepth.Location = new System.Drawing.Point(128, 270);
+            this.cbxDepth.Name = "cbxDepth";
+            this.cbxDepth.Size = new System.Drawing.Size(121, 23);
+            this.cbxDepth.TabIndex = 35;
+            this.cbxDepth.Text = "8bit";
+            // 
             // PictureSymbolCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 354);
+            this.ClientSize = new System.Drawing.Size(536, 396);
+            this.Controls.Add(this.cbxDepth);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbxTarget);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
@@ -183,5 +208,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox tbxTarget;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbxDepth;
     }
 }

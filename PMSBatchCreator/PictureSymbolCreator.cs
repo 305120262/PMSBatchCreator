@@ -28,6 +28,7 @@ namespace PMSBatchCreator
             string cat = this.tbxSet.Text;
             string folder = this.tbxOutput.Text;
             string target = this.tbxTarget.Text;
+            string depth = this.cbxDepth.Text;
 
             IStyleGalleryStorage sgs = new StyleGalleryClass();
             while (sgs.FileCount > 0)
@@ -86,7 +87,7 @@ namespace PMSBatchCreator
                 con.AddElement(ele_i, 0);
                 IActiveView av = layout as IActiveView;
                 string pic_file = folder+"\\"+item.Name + ".png";
-                ExportPNG(av, pic_file,bgc);
+                ExportPNG(av, pic_file,bgc,depth);
                 con.DeleteElement(ele_i);
 
                 ISymbol sym = CreatePictureMarkerSymbol(esriIPictureType.esriIPicturePNG, pic_file, pic_size) as ISymbol;
@@ -101,14 +102,18 @@ namespace PMSBatchCreator
             MessageBox.Show("成功导出图标");
         }
 
-        private void ExportPNG(IActiveView activeView, string pathFileName,IColor bg)
+        private void ExportPNG(IActiveView activeView, string pathFileName,IColor bg,string depth)
         {
             IExport export = new ExportPNGClass();
             export.ExportFileName = pathFileName;
             IExportPNG png = export as IExportPNG;
             png.TransparentColor = bg;
             IExportImage img = export as IExportImage;
-            img.ImageType = esriExportImageType.esriExportImageTypeIndexed;
+            if(depth=="8bit")
+            { img.ImageType = esriExportImageType.esriExportImageTypeIndexed; }
+            else if(depth=="32bit")
+            { img.ImageType = esriExportImageType.esriExportImageTypeTrueColor; }
+            
 
             // Microsoft Windows default DPI resolution
             export.Resolution = 96;
