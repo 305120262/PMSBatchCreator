@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxDepth = new System.Windows.Forms.ComboBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // tbxSet
@@ -83,7 +84,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(226, 320);
+            this.button1.Location = new System.Drawing.Point(228, 348);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 27;
@@ -170,11 +171,23 @@
             this.cbxDepth.TabIndex = 35;
             this.cbxDepth.Text = "8bit";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(347, 352);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(37, 15);
+            this.linkLabel1.TabIndex = 36;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "关于";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // PictureSymbolCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 396);
+            this.ClientSize = new System.Drawing.Size(536, 424);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cbxDepth);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbxTarget);
@@ -210,5 +223,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxDepth;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
